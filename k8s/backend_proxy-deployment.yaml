@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-proxy-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: backend-proxy
+  template:
+    metadata:
+      labels:
+        component: backend-proxy
+    spec:
+      containers:
+        - name: backend-proxy
+          image: d0rka/authentication-service-backend-proxy
+          ports:
+            - containerPort: 3000
+          env:
+            - name: BACKEND_HOST
+              value: secure-backend-cluster-ip-service
+            - name: BACKEND_PORT
+              value: "3000"
+            - name: OKTA_CLIENTID
+              valueFrom:
+                secretKeyRef:
+                  name: oktaclientid
+                  key: OKTA_CLIENTID
+            - name: OKTA_ISSUER
+              valueFrom:
+                secretKeyRef:
+                  name: oktaissuer
+                  key: OKTA_ISSUER

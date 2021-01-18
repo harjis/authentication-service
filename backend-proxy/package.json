@@ -1,11 +1,11 @@
 {
-  "name": "authenticator",
+  "name": "authentication-service_backend-proxy",
   "version": "1.0.0",
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
     "ts": "tsc --noEmit",
-    "start": "MODE=development HOST=localhost PORT=5000 nodemon --files src/index.ts",
+    "start": "MODE=development HOST=localhost PORT=3000 nodemon --files src/index.ts",
     "build": "tsc"
   },
   "devDependencies": {

@@ -33,6 +33,6 @@ app.use("/", createProxyMiddleware({ target, changeOrigin: true }));
 // This needs to be after all proxys. If it is before all POST requests do not work.
 app.use(bodyParser.json());
 
-app.listen(5000, () => {
-  console.log(`app is listening to port 5000`);
+app.listen(3000, () => {
+  console.log(`app is listening to port 3000`);
 });

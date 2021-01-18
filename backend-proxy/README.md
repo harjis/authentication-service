@@ -44,7 +44,7 @@ spec:
               service:
                 name: authenticator-cluster-ip-service
                 port:
-                  number: 5000 
+                  number: 3000 
 ```
 
 6. Can be uninstalled with
