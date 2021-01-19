@@ -1,0 +1,27 @@
+{
+  "name": "test-backend",
+  "version": "1.0.0",
+  "description": "Backend for testing and development",
+  "main": "index.ts",
+  "scripts": {
+    "ts": "tsc --noEmit",
+    "start": "MODE=development HOST=localhost PORT=3000 nodemon --files src/index.ts",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/errorhandler": "^1.5.0",
+    "@types/express": "^4.17.11",
+    "errorhandler": "^1.5.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}

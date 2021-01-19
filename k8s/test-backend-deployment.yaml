@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: test-backend
+  template:
+    metadata:
+      labels:
+        component: test-backend
+    spec:
+      containers:
+        - name: test-backend
+          image: d0rka/authentication-service-test-backend
+          ports:
+            - containerPort: 3000

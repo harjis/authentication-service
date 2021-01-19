@@ -16,3 +16,10 @@ build:
       sync:
         infer:
           - "**/*"
+    - image: d0rka/authentication-service-test-backend
+      context: test-backend
+      docker:
+        dockerfile: Dockerfile.dev
+      sync:
+        infer:
+          - "**/*"

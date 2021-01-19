@@ -19,7 +19,7 @@ spec:
             - containerPort: 3000
           env:
             - name: BACKEND_HOST
-              value: secure-backend-cluster-ip-service
+              value: test-backend-cluster-ip-service
             - name: BACKEND_PORT
               value: "3000"
             - name: OKTA_CLIENTID

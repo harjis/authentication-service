@@ -1,5 +1,5 @@
 FROM node:alpine
-WORKDIR /backend-proxy
+WORKDIR /test-backend
 COPY package.json .
 RUN yarn install
 COPY . .
