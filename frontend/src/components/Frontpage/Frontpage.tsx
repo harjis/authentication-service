@@ -6,7 +6,7 @@ import styles from "./Frontpage.module.css";
 export const Frontpage = () => {
   const { oktaAuth, authState } = useOktaAuth();
   const login = async () => {
-    await oktaAuth.signInWithRedirect({ originalUri: "/users" });
+    await oktaAuth.signInWithRedirect({ originalUri: "/" });
   };
 
   if (authState.isPending) {

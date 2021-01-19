@@ -21,8 +21,11 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "authentication-service/test-frontend",
+      name: "main_frontend",
       filename: "remoteEntry.js",
+      exposes: {
+        "./MainApp": "./src/components/MainApp",
+      },
       shared: {
         react: {
           requiredVersion: deps.react,

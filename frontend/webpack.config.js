@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { ModuleFederationPlugin } = require("webpack").container;
+const webpack = require("webpack");
+const { ModuleFederationPlugin } = webpack.container;
 const path = require("path");
 const deps = require("./package.json").dependencies;
 
@@ -37,6 +38,7 @@ module.exports = {
         },
       },
     }),
+    new webpack.EnvironmentPlugin(["OKTA_CLIENTID", "OKTA_ISSUER"]),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
   ],
   module: {
