@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    component: backend-proxy
+    component: backend-proxy-server
   ports:
     - port: 3000
       targetPort: 3000

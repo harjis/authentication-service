@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      component: backend-proxy
+      component: backend-proxy-server
   template:
     metadata:
       labels:
-        component: backend-proxy
+        component: backend-proxy-server
     spec:
       containers:
         - name: backend-proxy

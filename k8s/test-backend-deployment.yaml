@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      component: test-backend
+      component: test-backend-server
   template:
     metadata:
       labels:
-        component: test-backend
+        component: test-backend-server
     spec:
       containers:
         - name: test-backend

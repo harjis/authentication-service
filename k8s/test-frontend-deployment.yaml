@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-deployment
+  name: test-frontend-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: frontend-web
+      component: test-frontend-web
   template:
     metadata:
       labels:
-        component: frontend-web
+        component: test-frontend-web
     spec:
       containers:
         -
           name: frontend
-          image: d0rka/authentication-service-frontend
+          image: d0rka/authentication-service-test-frontend
           ports:
             -
               containerPort: 3001
