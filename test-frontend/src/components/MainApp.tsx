@@ -1,5 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Route, Link, BrowserRouter } from "react-router-dom";
+
+import MainContent from "./MainContent";
+import OtherContent from "./OtherContent";
 
 type Props = {
   accessToken: string;
@@ -19,10 +22,10 @@ const MainApp: React.FC<Props> = (props) => {
 
       <br />
       <Route path="/" exact>
-        <div>Main app here!</div>
+        <MainContent />
       </Route>
       <Route path="/other_route">
-        <div>Main app too but other route!</div>
+        <OtherContent />
       </Route>
     </BrowserRouter>
   );

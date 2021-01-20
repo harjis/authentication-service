@@ -16,7 +16,8 @@ const App = () => {
   return (
     <Router>
       <Security oktaAuth={oktaAuth}>
-        <SecureRoute path="/" exact>
+        {/*TODO the wildcard here is pretty wild*/}
+        <SecureRoute path={["/", "*"]} exact>
           <Suspense fallback={<div>Loading Main app...</div>}>
             <RemoteApp />
           </Suspense>
