@@ -1,11 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Route } from "react-router-dom";
-import { Security, LoginCallback } from "@okta/okta-react";
+import React, { Suspense } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { LoginCallback, Security, SecureRoute } from "@okta/okta-react";
 import { OktaAuth } from "@okta/okta-auth-js";
 
-import { Frontpage } from "./components/Frontpage";
 import { oktaClientId, oktaIssuer } from "./env";
+import { RemoteApp } from "./components/RemoteApp";
 
 const oktaAuth = new OktaAuth({
   issuer: oktaIssuer,
@@ -17,8 +16,14 @@ const App = () => {
   return (
     <Router>
       <Security oktaAuth={oktaAuth}>
-        <Route path="/" exact={true} component={Frontpage} />
-        <Route path="/login/callback" component={LoginCallback} />
+        <SecureRoute path="/" exact>
+          <Suspense fallback={<div>Loading Main app...</div>}>
+            <RemoteApp />
+          </Suspense>
+        </SecureRoute>
+        <Route path="/login/callback">
+          <LoginCallback />
+        </Route>
       </Security>
     </Router>
   );

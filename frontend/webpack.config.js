@@ -9,10 +9,12 @@ module.exports = {
   mode: "development",
   devServer: {
     contentBase: path.join(__dirname, "dist"),
+    historyApiFallback: true,
     port: 3001,
     host: "0.0.0.0", // So that dev server can be accessed externally
   },
   output: {
+    publicPath: "/",
     path: path.resolve(__dirname, "dist"),
     filename: "app.bundle.js",
   },
