@@ -12,7 +12,7 @@ then
       exit 1
 fi
 
-docker build -t d0rka/authentication-service-backend-proxy:latest -t d0rka/authentication-service-backend-proxy:$SHA -t d0rka/authentication-service-backend-proxy:$VERSION -f ./backend/Dockerfile.dev ./backend-proxy
+docker build -t d0rka/authentication-service-backend-proxy:latest -t d0rka/authentication-service-backend-proxy:$SHA -t d0rka/authentication-service-backend-proxy:$VERSION -f ./backend-proxy/Dockerfile.dev ./backend-proxy
 docker build -t d0rka/authentication-service-frontend:latest -t d0rka/authentication-service-frontend:$SHA -t d0rka/authentication-service-frontend:$VERSION -f ./frontend/Dockerfile.dev ./frontend
 
 docker push d0rka/authentication-service-backend-proxy:latest
