@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// ALERT ALERT ALERT!!!!
+// DO NOT CHANGE THE NAME IF THIS FILE. IT WILL BREAK PRODUCTION BUILD
+// SEARCH FOR src_bootstrap_tsx.app.bundle.js IN docker-entrypoint.sh
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

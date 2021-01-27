@@ -1,15 +1,9 @@
-let oktaClientId: string;
-if (!process.env.OKTA_CLIENTID) {
-  throw new Error("Please define: OKTA_CLIENTID");
-} else {
-  oktaClientId = process.env.OKTA_CLIENTID;
-}
+const envs = {
+  oktaClientId: "${OKTA_CLIENTID}",
+  oktaIssuer: "${OKTA_ISSUER}",
+};
 
-let oktaIssuer: string;
-if (!process.env.OKTA_ISSUER) {
-  throw new Error("Please define: OKTA_ISSUER");
-} else {
-  oktaIssuer = process.env.OKTA_ISSUER;
-}
+const oktaClientId = envs.oktaClientId;
+const oktaIssuer = envs.oktaIssuer;
 
 export { oktaClientId, oktaIssuer };

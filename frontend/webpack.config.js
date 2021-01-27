@@ -16,7 +16,7 @@ module.exports = {
   output: {
     publicPath: "/",
     path: path.resolve(__dirname, "build"),
-    filename: "app.bundle.js",
+    filename: "app.bundle.js", // Do not change this. Search for src_bootstrap_tsx.app.bundle.js
   },
 
   resolve: {
@@ -40,7 +40,6 @@ module.exports = {
         },
       },
     }),
-    new webpack.EnvironmentPlugin(["OKTA_CLIENTID", "OKTA_ISSUER"]),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
   ],
   module: {
