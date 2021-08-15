@@ -42,11 +42,11 @@ jobs:
           file: ./backend/Dockerfile
           push: true
           tags: |
-            d0rka/folder-service-backend:latest
-            d0rka/folder-service-backend:${{ github.sha }}
-            d0rka/folder-service-backend:${{ env.VERSION }}
+            d0rka/authentication-service-backend-proxy:latest
+            d0rka/authentication-service-backend-proxy:${{ github.sha }}
+            d0rka/authentication-service-backend-proxy:${{ env.VERSION }}
 
-      - name: Build and push backend
+      - name: Build and push frontend
         id: docker_build_frontend
         uses: docker/build-push-action@v2
         with:
@@ -54,9 +54,9 @@ jobs:
           file: ./frontend/Dockerfile
           push: true
           tags: |
-            d0rka/folder-service-frontend:latest
-            d0rka/folder-service-frontend:${{ github.sha }}
-            d0rka/folder-service-frontend:${{ env.VERSION }}
+            d0rka/authentication-service-frontend:latest
+            d0rka/authentication-service-frontend:${{ github.sha }}
+            d0rka/authentication-service-frontend:${{ env.VERSION }}
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.1
