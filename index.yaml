@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  authentication-service:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2021-08-15T17:53:53.774872572Z"
+    description: A Helm chart for Kubernetes
+    digest: c49df5c6c99ea7c9e9e7fb737e4dfb923fac63c3d05010128b791ad233447385
+    name: authentication-service
+    type: application
+    urls:
+    - https://github.com/harjis/authentication-service/releases/download/authentication-service-0.1.0/authentication-service-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-08-15T17:53:53.774880972Z"
