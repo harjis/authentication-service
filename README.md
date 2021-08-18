@@ -16,10 +16,16 @@ Accessing minikube ip directly does not work
 
 1. Add helm repo
 ```shell script
-helm repo add harjis-charts https://harjis.github.io/helm-charts/
+helm repo add authentication-service https://harjis.github.io/authentication-service/
+helm repo update
+```
+
+2. Search what can be installed
+```shell
+helm search repo authentication-service
 ```
 
 4. Install service with
 ````shell script
-helm install authentication-service harjis-charts/authentication-service
+helm install authentication-service authentication-service/authentication-service
 ````
