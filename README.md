@@ -1,8 +1,9 @@
 # How to run locally:
 
+oktaissuer = https://${yourOktaDomain}/oauth2/default
 ```shell script
-kubectl create secret generic pgpassword --from-literal OKTA_CLIENTID=put_client_id_here
-kubectl create secret generic pgpassword --from-literal OKTA_ISSUER=put_issuer_here
+kubectl create secret generic oktaclientid --from-literal OKTA_CLIENTID=put_client_id_here
+kubectl create secret generic oktaissuer --from-literal OKTA_ISSUER=put_issuer_here
 minikube addons enable ingress
 sudo ssh -i $(minikube ssh-key) docker@$(minikube ip) -L 80:localhost:80
 skaffold dev
